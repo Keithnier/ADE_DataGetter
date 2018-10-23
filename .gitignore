@@ -1,0 +1,9 @@
+out/
+outputfile/
+*.class
+.idea
+*.iml
+/paramfile/
+/src/paramfile/
+/src/outputfile/
+/web/WEB-INF/classes/
