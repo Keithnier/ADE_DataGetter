@@ -1,0 +1,27 @@
+DiskStorageManager
+1. FileName	String
+要打开的文件的基本名称（无扩展名）
+2. Overwrite	Boolean
+如果覆盖为真，并且具有指定文件名的存储管理器已存在，则它将被截断并被覆盖。所有数据都将丢失
+3. PageSize	Integer
+要使用的页面大小。如果指定的文件名已经存在并且Overwrite为false，则忽略PageSize
+
+RTree
+1. IndexIndentifier	Integer
+如果指定，则将使用给定的索引ID从提供的存储管理器打开现有的索引。 如果索引ID或存储管理器不正确，则行为未指定。
+2.	Dimension	Integer
+将被插入的数据的维度。
+3. IndexCapacity	Integer
+索引节点的容量。默认值是100
+4. LeafCapactiy	Integer
+叶节点容量。默认值是100
+5. FillFactor Double
+填充因子。默认值是70％
+6. TreeVariant Integer
+可以是Linear，Quadratic或Rstar之一。默认是Rstar
+7. NearMinimumOverlapFactor	Integer
+缺省值是32
+8. SplitDistributionFactor Double
+默认值是0.4
+9. ReinsertFactor Double
+默认值为0.3

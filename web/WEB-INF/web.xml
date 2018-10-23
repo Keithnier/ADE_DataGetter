@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+    <listener >
+        <listener-class>servlet.stopAppListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>InitServiceServlet</servlet-name>
+        <servlet-class>servlet.InitServiceServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InitServiceServlet</servlet-name>
+        <url-pattern>/InitServiceServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DataGetServlet</servlet-name>
+        <servlet-class>servlet.DataGetServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DataGetServlet</servlet-name>
+        <url-pattern>/DataGetServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StatGetServlet</servlet-name>
+        <servlet-class>servlet.StatGetServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StatGetServlet</servlet-name>
+        <url-pattern>/StatGetServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PauseCrawlerServlet</servlet-name>
+        <servlet-class>servlet.PauseCrawlerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PauseCrawlerServlet</servlet-name>
+        <url-pattern>/PauseCrawlerServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>StopCrawlerServlet</servlet-name>
+        <servlet-class>servlet.StopCrawlerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FileDownloadServlet</servlet-name>
+        <servlet-class>servlet.FileDownloadServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FileDeleteServlet</servlet-name>
+        <servlet-class>servlet.FileDeleteServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>PreProcessTestServlet</servlet-name>
+        <servlet-class>servlet.PreProcessTestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>StopCrawlerServlet</servlet-name>
+        <url-pattern>/StopCrawlerServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FileDownloadServlet</servlet-name>
+        <url-pattern>/FileDownloadServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>FileDeleteServlet</servlet-name>
+        <url-pattern>/FileDeleteServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>PreProcessTestServlet</servlet-name>
+        <url-pattern>/PreProcessTestServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Deal_1_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_1_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+    <servlet>
+        <servlet-name>Deal_2_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_2_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+    <servlet>
+        <servlet-name>Deal_3_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_3_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+
+    <servlet>
+        <servlet-name>Deal_4_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_4_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+    <servlet>
+        <servlet-name>Deal_5_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_5_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+    <servlet>
+        <servlet-name>Deal_6_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_6_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+    <servlet>
+        <servlet-name>Deal_7_Servlet</servlet-name>  <!--指定Servlet名字-->
+        <servlet-class>servlet.Deal_7_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+    </servlet>
+    <!--配置映射路径-->
+    <servlet-mapping>
+        <servlet-name>Deal_1_Servlet</servlet-name>
+        <url-pattern>/PrePorcessServletButtonI</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deal_2_Servlet</servlet-name>
+        <url-pattern>/PrePorcessServletButtonII</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deal_3_Servlet</servlet-name>
+        <url-pattern>/PrePorcessServletButtonIII</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deal_4_Servlet</servlet-name>
+        <url-pattern>/PrePorcessLuceneSearch</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deal_5_Servlet</servlet-name>
+        <url-pattern>/PreProcessResetDic</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deal_6_Servlet</servlet-name>
+        <url-pattern>/PreProcessResetTFIDF</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Deal_7_Servlet</servlet-name>
+        <url-pattern>/PreProcessResetLucene</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>WebProcess.InitParam</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>IRtree</servlet-name>
+        <servlet-class>servlet.IRtreeServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IRtree</servlet-name>
+        <url-pattern>/servlet/IRtreeServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Query</servlet-name>
+        <servlet-class>servlet.QueryServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Query</servlet-name>
+        <url-pattern>/servlet/QueryServlet</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>servlet.CloseListener</listener-class>
+    </listener>
+</web-app>

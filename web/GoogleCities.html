@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Google Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+        #changeCity {
+            position: absolute;
+            top: 10px;
+            right: 0%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+    </style>
+
+</head>
+
+<script src="js/jquery.form.js" type="text/javascript"></script>
+<script src="js/jquery.min.js" type="text/javascript"></script>
+
+<body>
+<div id="floating-panel">
+    <label>Keyword:&nbsp;&nbsp;<input id="time" type="text" name="time" ></label>
+    <label><input id="start" type="button"  value="Search" onclick="search();"/> </label>
+    <label><input id="end" type="button"  value="Back" onclick="loadMap('res/pre.json');"/> </label>
+
+</div>
+<!--<div id="changeCity">-->
+    <!--<form id='list'>Choose City:-->
+        <!--<select id='cities'></select>-->
+    <!--</form>-->
+<!--</div>-->
+<div id="map"></div>
+<script>
+
+    var loadMap = function(path){
+
+              jQuery.getJSON(path, function(jsonArray) {
+
+                //初始化地图
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 2,
+                    center: {lat: 0, lng: 0}
+                });
+
+                var locations = [];//位置信息构成的数组
+                var markers;//标记点构成的数组
+                var infoWin = new google.maps.InfoWindow();//信息窗口
+                var latlng;//经纬度对象
+
+                  //将文件内容写入locations数组中
+                  for (var i = 0; i < jsonArray.length; i++) {
+                      var jsonObject = jsonArray[i];
+                      var boxItem = jsonObject.boundingBox;
+                      var latItem = parseFloat(((boxItem.south_lat + boxItem.north_lat) / 2).toFixed(3));
+                      var longItem = parseFloat(((boxItem.west_long + boxItem.east_long) / 2).toFixed(3));
+
+                      var timestamp = jsonObject.timestamp;
+                      var date = new Date(parseInt(timestamp)).toLocaleString();
+                      //判断标记是否已经存在，若已存在，则只更新信息窗口内容，否则新建标记
+                      var isExist = false;
+                      var j;
+                      for (j = 0; j < locations.length; j++) {
+//                        alert("latItem " + latItem + " longItem " + longItem + "\n lat:" + locations[j].lat + " long:" + locations[j].lng);
+                          if (latItem === locations[j].lat && longItem === locations[j].lng) {
+                              isExist = true;
+                              break;
+                          }
+                      }
+                      if (!isExist) {
+                          latlng = {
+                              lat: latItem,
+                              lng: longItem,
+                              info:
+                              '<h1 id="location">' + jsonObject.locationName + '</h1>' +
+                              '<br/><div id="text">' + '<p>' + jsonObject.text + '</p>' + '</div>' +
+                              '<div id="date"><b>' + date + '</b></div>'
+                          };
+                          locations.push(latlng);
+                      } else {
+                          locations[j].info += '<br/><div id="text">' + '<p>' + jsonObject.text + '</p>' + '</div>' +
+                              '<div id="date"><b>' + date + '</b></div>';
+                      }
+                }
+
+                      //设置所有的标记点
+                      markers = locations.map(function (location) {
+                          var marker = new google.maps.Marker({
+                              position: location
+                          });
+
+                          //设置点击标记后弹出的信息窗口
+                          google.maps.event.addListener(marker, 'click', function (evt) {
+                              infoWin.setContent(location.info);
+                              infoWin.open(map, marker);
+                          });
+                          return marker;
+                      });
+
+                      //创建聚类标记
+                      var markerCluster = new MarkerClusterer(map, markers, {
+                          imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+                      });
+//        }
+//              });
+    });
+    };
+
+    var search = function(){
+        var num = Math.floor(Math.random()*6 + 1);
+        var path = "res/pre" + num + ".json";
+        loadMap(path);
+    };
+
+    window.onload = loadMap("res/pre.json");
+
+</script>
+<script src="Cluster.js">//聚类标记部分的源码
+</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXCZp9mOCLvDuLvnakRmZt4Og70WXKkOs">
+</script>
+</body>
+</html>
