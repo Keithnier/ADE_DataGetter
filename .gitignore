@@ -1,8 +1,0 @@
-out/
-outputfile/
-*.class
-.idea
-*.iml
-/paramfile/
-/src/paramfile/
-/src/outputfile/
