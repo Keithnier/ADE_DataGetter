@@ -19,54 +19,54 @@ web相关文件在**web**文件夹下
 
 主目录结构如下
 
-└── DataGetter
-    ├── SaveData
-    ├── out
-    ├──**outputfile**
-    ├── **paramfile**
-    ├── src
-    └── web
+└── DataGetter  
+    ├── SaveData  
+    ├── out  
+    ├──**outputfile**  
+    ├── **paramfile**  
+    ├── src  
+    └── web  
 
 
 
 src目录结构如下
 
-src
-├── DAO
-├── DataPreProcess
-│   ├── DataBase
-│   ├── DataRes
-│   │   └── Twitter
-│   ├── Dictionary
-│   ├── Index
-│   ├── InfoExtra
-│   ├── InfoFilter
-│   ├── Model
-│   ├── Segment
-│   ├── TFIDF
-│   └── Util
-├── Flickr
-├── Tumblr
-├── Twitter
-├── WebProcess
-├── WebService
-├── YouTube
-├── invertedindex
-├── model
-├── neustore
-│   ├── base
-│   └── heapfile
-├── **outputfile**
-├── **paramfile**
-├── query
-├── regressiontest
-├── servlet
-├── spatialindex
-│   ├── rtree
-│   ├── spatialindex
-│   └── storagemanager
-├── test
-└── util
+src  
+├── DAO  
+├── DataPreProcess  
+│   ├── DataBase  
+│   ├── DataRes  
+│   │   └── Twitter  
+│   ├── Dictionary  
+│   ├── Index  
+│   ├── InfoExtra  
+│   ├── InfoFilter  
+│   ├── Model   
+│   ├── Segment  
+│   ├── TFIDF  
+│   └── Util  
+├── Flickr  
+├── Tumblr  
+├── Twitter  
+├── WebProcess  
+├── WebService  
+├── YouTube  
+├── invertedindex  
+├── model  
+├── neustore  
+│   ├── base  
+│   └── heapfile  
+├── **outputfile**  
+├── **paramfile**  
+├── query  
+├── regressiontest  
+├── servlet  
+├── spatialindex  
+│   ├── rtree  
+│   ├── spatialindex  
+│   └── storagemanager  
+├── test  
+└── util  
 
 
 
