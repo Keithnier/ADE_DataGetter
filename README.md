@@ -18,7 +18,7 @@ web相关文件在**web**文件夹下
 
 
 主目录结构如下
-
+``` shell
 └── DataGetter  
     ├── SaveData  
     ├── out  
@@ -26,11 +26,12 @@ web相关文件在**web**文件夹下
     ├── **paramfile**  
     ├── src  
     └── web  
-
+```
 
 
 src目录结构如下
 
+``` shell
 src  
 ├── DAO  
 ├── DataPreProcess  
@@ -67,7 +68,7 @@ src
 │   └── storagemanager  
 ├── test  
 └── util  
-
+```
 
 
 如若项目无法运行，请先排除**文件缺失**的问题
