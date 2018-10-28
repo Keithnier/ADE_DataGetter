@@ -23,7 +23,7 @@
             var Tumblr = document.getElementById("Tumblr").checked;
             var YouTube = document.getElementById("YouTube").checked;
             var filepath;
-            if (Twitter) filepath = "src\\test\\data.txt"; //这只是测试路径，例如："src\\test\\data.txt"和"Weight"
+            if (Twitter) filepath = "src\\IRTree\\test\\data.txt"; //这只是测试路径，例如："src\\test\\data.txt"和"Weight"
             /*if (Twitter) filepath = "E:\\data.txt";*/
             else filepath = null;
             $.ajax({

@@ -1,6 +1,6 @@
 package servlet;
 
-import spatialindex.rtree.DataGetter_IRTree;
+import IRTree.spatialindex.rtree.DataGetter_IRTree;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
