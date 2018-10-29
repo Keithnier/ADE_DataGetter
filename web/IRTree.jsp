@@ -1,4 +1,4 @@
-<%@ page import="DataPreProcess.DataBase.DataBaseUtil" %>
+<%@ page import="PreProcess.DataPreProcess.DataBase.DataBaseUtil" %>
 <%--
   Created by IntelliJ IDEA.
   User: wml
@@ -27,7 +27,7 @@
             /*if (Twitter) filepath = "E:\\data.txt";*/
             else filepath = null;
             $.ajax({
-                url: "servlet/IRtreeServlet",
+                url: "/servlet/IRtreeServlet",
                 data: {filepath: filepath},
                 async: true,   //是否为异步请求
                 cache: false,  //是否缓存结果

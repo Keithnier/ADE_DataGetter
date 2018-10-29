@@ -87,32 +87,32 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Deal_1_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_1_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_1_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
     <servlet>
         <servlet-name>Deal_2_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_2_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_2_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
     <servlet>
         <servlet-name>Deal_3_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_3_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_3_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
 
     <servlet>
         <servlet-name>Deal_4_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_4_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_4_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
     <servlet>
         <servlet-name>Deal_5_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_5_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_5_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
     <servlet>
         <servlet-name>Deal_6_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_6_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_6_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
     <servlet>
         <servlet-name>Deal_7_Servlet</servlet-name>  <!--指定Servlet名字-->
-        <servlet-class>servlet.Deal_7_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
+        <servlet-class>PreProcess.Servlet.Deal_7_Servlet</servlet-class>  <!--指定Servlet的完整限定名-->
     </servlet>
     <!--配置映射路径-->
     <servlet-mapping>
@@ -144,11 +144,11 @@
         <url-pattern>/PreProcessResetLucene</url-pattern>
     </servlet-mapping>
     <listener>
-        <listener-class>WebProcess.InitParam</listener-class>
+        <listener-class>PreProcess.WebProcess.InitParam</listener-class>
     </listener>
     <servlet>
         <servlet-name>IRtree</servlet-name>
-        <servlet-class>servlet.IRtreeServlet</servlet-class>
+        <servlet-class>IRTree.servlet.IRtreeServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -158,7 +158,7 @@
 
     <servlet>
         <servlet-name>Query</servlet-name>
-        <servlet-class>servlet.QueryServlet</servlet-class>
+        <servlet-class>IRTree.servlet.QueryServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -167,6 +167,6 @@
     </servlet-mapping>
 
     <listener>
-        <listener-class>servlet.CloseListener</listener-class>
+        <listener-class>IRTree.servlet.CloseListener</listener-class>
     </listener>
 </web-app>

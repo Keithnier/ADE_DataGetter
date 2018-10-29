@@ -18,7 +18,7 @@
             var location = $("#location").val();
             var keys = $("#keys").val();
             $.ajax({
-                url: "servlet/QueryServlet",
+                url: "/servlet/QueryServlet",
                 data: {time:time,location:location,keys: keys},
                 async: true,   //是否为异步请求
                 cache: false,  //是否缓存结果
