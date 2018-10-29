@@ -1,6 +1,6 @@
 package IRTree.regressiontest;
 
-import util._readData;
+import DataCrawler.util._readData;
 
 import java.io.*;
 import java.text.SimpleDateFormat;

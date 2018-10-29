@@ -1,6 +1,6 @@
 package IRTree.query;
 
-import util.Constants;
+import DataCrawler.util.Constants;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

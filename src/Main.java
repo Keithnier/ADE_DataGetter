@@ -1,7 +1,7 @@
-import Flickr.FlickrCrawler;
-import Twitter.TwitterCrawler;
-import YouTube.YouTubeCrawler;
-import util.ConfigurationFactory;
+import DataCrawler.Flickr.FlickrCrawler;
+import DataCrawler.Twitter.TwitterCrawler;
+import DataCrawler.YouTube.YouTubeCrawler;
+import DataCrawler.util.ConfigurationFactory;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;

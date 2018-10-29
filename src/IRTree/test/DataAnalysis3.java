@@ -2,7 +2,7 @@ package IRTree.test;
 
 import com.mongodb.util.JSONParseException;
 import org.bson.Document;
-import util.FileSystem;
+import DataCrawler.util.FileSystem;
 
 import java.io.*;
 import java.text.ParseException;

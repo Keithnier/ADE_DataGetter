@@ -6,7 +6,7 @@ import IRTree.neustore.base.LRUBuffer;
 import IRTree.query.Query;
 import IRTree.spatialindex.spatialindex.*;
 import IRTree.spatialindex.storagemanager.*;
-import util.Constants;
+import DataCrawler.util.Constants;
 
 import java.io.*;
 import java.util.*;

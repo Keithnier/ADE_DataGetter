@@ -9,7 +9,7 @@ import jdbm.recman.CacheRecordManager;
 import IRTree.neustore.base.FloatData;
 import IRTree.neustore.base.IntKey;
 import IRTree.neustore.base.KeyData;
-import util._readData;
+import DataCrawler.util._readData;
 
 import java.io.IOException;
 import java.util.Vector;

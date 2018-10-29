@@ -29,7 +29,7 @@
 
 package IRTree.spatialindex.storagemanager;
 
-import util.Constants;
+import DataCrawler.util.Constants;
 
 import java.io.*;
 import java.util.*;

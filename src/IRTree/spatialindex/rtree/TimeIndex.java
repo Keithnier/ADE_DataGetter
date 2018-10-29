@@ -4,7 +4,7 @@ import IRTree.regressiontest.TimeAreaMerge;
 import IRTree.spatialindex.spatialindex.Point;
 import IRTree.spatialindex.spatialindex.Region;
 import IRTree.spatialindex.storagemanager.*;
-import util.Constants;
+import DataCrawler.util.Constants;
 
 import java.io.File;
 import java.util.*;

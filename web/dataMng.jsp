@@ -1,6 +1,6 @@
-<%@ page import="model.FilesModel" %>
+<%@ page import="DataCrawler.model.FilesModel" %>
 <%@ page import="java.util.List" %>
-<%@ page import="DAO.FilesDAO" %>
+<%@ page import="DataCrawler.DAO.FilesDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>

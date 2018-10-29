@@ -5,12 +5,12 @@
          version="3.1">
 
     <listener >
-        <listener-class>servlet.stopAppListener</listener-class>
+        <listener-class>DataCrawler.servlet.stopAppListener</listener-class>
     </listener>
 
     <servlet>
         <servlet-name>InitServiceServlet</servlet-name>
-        <servlet-class>servlet.InitServiceServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.InitServiceServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -20,7 +20,7 @@
 
     <servlet>
         <servlet-name>DataGetServlet</servlet-name>
-        <servlet-class>servlet.DataGetServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.DataGetServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -30,7 +30,7 @@
 
     <servlet>
         <servlet-name>StatGetServlet</servlet-name>
-        <servlet-class>servlet.StatGetServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.StatGetServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -40,7 +40,7 @@
 
     <servlet>
         <servlet-name>PauseCrawlerServlet</servlet-name>
-        <servlet-class>servlet.PauseCrawlerServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.PauseCrawlerServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -50,20 +50,20 @@
 
     <servlet>
         <servlet-name>StopCrawlerServlet</servlet-name>
-        <servlet-class>servlet.StopCrawlerServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.StopCrawlerServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FileDownloadServlet</servlet-name>
-        <servlet-class>servlet.FileDownloadServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.FileDownloadServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>FileDeleteServlet</servlet-name>
-        <servlet-class>servlet.FileDeleteServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.FileDeleteServlet</servlet-class>
     </servlet>
 
     <servlet>
         <servlet-name>PreProcessTestServlet</servlet-name>
-        <servlet-class>servlet.PreProcessTestServlet</servlet-class>
+        <servlet-class>DataCrawler.servlet.PreProcessTestServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
