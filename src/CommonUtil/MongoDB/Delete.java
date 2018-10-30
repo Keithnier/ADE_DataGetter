@@ -1,9 +1,9 @@
-package PreProcess.DataPreProcess.DataBase;
+package CommonUtil.MongoDB;
 
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
-import static PreProcess.DataPreProcess.DataBase.DataBaseUtil.getMongoCollection;
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
 
 public class Delete {
     /**

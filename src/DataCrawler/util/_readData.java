@@ -12,7 +12,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import static DataCrawler.util.MongoDB.getAllDataInDB;
+import static CommonUtil.MongoDB.Read.*;
+import static CommonUtil.MongoDB.DataBaseUtil.*;
+
 
 public class _readData implements readData {
     private  BufferedReader in;
@@ -37,7 +39,7 @@ public class _readData implements readData {
         if (filePath.endsWith(".txt"))
             in = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
         else{
-            MongoDB.MongoDBConnect();
+            MongoDBConnect();
             DBresult = getAllDataInDB(filePath);//此时filePath = DBname 如“YoutubeData”等
             it_key = DBresult.keySet().iterator();
             key = it_key.next();
@@ -113,7 +115,7 @@ public class _readData implements readData {
     public void close()throws IOException {
         if (file.endsWith(".txt"))
             in.close();
-        else MongoDB.disconnectMongoDB();
+        else MongoDBDisConnect();
         id = 0;
     }
 

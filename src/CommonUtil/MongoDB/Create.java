@@ -1,4 +1,5 @@
-package PreProcess.DataPreProcess.DataBase;
+package CommonUtil.MongoDB;
+
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;

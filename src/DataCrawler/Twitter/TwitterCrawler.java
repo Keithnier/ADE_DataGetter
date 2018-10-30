@@ -6,8 +6,9 @@ import DataCrawler.model.Crawler;
 import DataCrawler.model.RestParam;
 import org.bson.Document;
 import DataCrawler.util.FileSystem;
-import DataCrawler.util.MongoDB;
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
 
+import static CommonUtil.MongoDB.Write.writeJson2Collection;
 import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -105,7 +106,7 @@ public class TwitterCrawler implements Crawler{
         try {
             bufferedReader = getBufferedReaderByStream(response.getStream());
             bufferedWriter = FileSystem.getBufferedWriterByPath(filePath_data);
-            collection = MongoDB.getMongoCollection(this.dbName, colname);//mongodb
+            collection = getMongoCollection(this.dbName, colname);//mongodb
 
             while(counts > 0) {
                 String json = bufferedReader.readLine();
@@ -121,7 +122,7 @@ public class TwitterCrawler implements Crawler{
                 bufferedWriter.write(json);
                 bufferedWriter.newLine();
 
-                MongoDB.writeJson2Collection(collection, json);//mongodb
+                writeJson2Collection(collection, json);//mongodb
                 if (counts % 10 == 0){
                     System.out.print("|" + counts);
                 }

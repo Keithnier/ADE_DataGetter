@@ -2,7 +2,8 @@ package DataCrawler.servlet;
 
 import DataCrawler.WebService.CrawlerService;
 import twitter4j.JSONObject;
-import DataCrawler.util.MongoDB;
+import static CommonUtil.MongoDB.DataBaseUtil.getColletcionNamesInDB;
+import static CommonUtil.MongoDB.Read.getCountDataInCollection;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -51,30 +52,30 @@ public class StatGetServlet extends HttpServlet {
     private String getCrawlerData(List<String> crawlerNames){
         String result = "";
         if (crawlerNames.contains("Twitter")) {
-            List<String> collectionName = MongoDB.getColletcionNamesInDB("TwitterData");
+            List<String> collectionName = getColletcionNamesInDB("TwitterData");
             if(collectionName.size()!=0){
-                List<String> twitterData  = MongoDB.getCountDataInCollection("TwitterData",collectionName.get(collectionName.size()-1),1);
+                List<String> twitterData  = getCountDataInCollection("TwitterData",collectionName.get(collectionName.size()-1),1);
                 if (twitterData.size()!=0) result = result + twitterData.toString() + "\r\n";
             }
         }
         if (crawlerNames.contains("Flickr")) {
-            List<String> collectionName = MongoDB.getColletcionNamesInDB("FlickrData");
+            List<String> collectionName = getColletcionNamesInDB("FlickrData");
             if(collectionName.size()!=0){
-                List<String> flickrData  = MongoDB.getCountDataInCollection("FlickrData",collectionName.get(collectionName.size()-1),1);
+                List<String> flickrData  = getCountDataInCollection("FlickrData",collectionName.get(collectionName.size()-1),1);
                 if (flickrData.size()!=0) result = result + flickrData.toString() + "\r\n";
             }
         }
         if (crawlerNames.contains("Youtube")) {
-            List<String> collectionName = MongoDB.getColletcionNamesInDB("YoutubeData");
+            List<String> collectionName = getColletcionNamesInDB("YoutubeData");
             if(collectionName.size()!=0){
-                List<String> youtubeData  = MongoDB.getCountDataInCollection("YoutubeData",collectionName.get(collectionName.size()-1),1);
+                List<String> youtubeData  = getCountDataInCollection("YoutubeData",collectionName.get(collectionName.size()-1),1);
                 if (youtubeData.size()!=0) result = result + youtubeData.toString() + "\r\n";
             }
         }
         if (crawlerNames.contains("Tumblr")) {
-            List<String> collectionName = MongoDB.getColletcionNamesInDB("TumblrData");
+            List<String> collectionName = getColletcionNamesInDB("TumblrData");
             if(collectionName.size()!=0){
-                List<String> tumblrData  = MongoDB.getCountDataInCollection("TumblrData",collectionName.get(collectionName.size()-1),1);
+                List<String> tumblrData  = getCountDataInCollection("TumblrData",collectionName.get(collectionName.size()-1),1);
                 if (tumblrData.size()!=0) result = result + tumblrData.toString() + "\r\n";
             }
         }

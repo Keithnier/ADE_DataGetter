@@ -1,14 +1,17 @@
-package PreProcess.DataPreProcess.DataBase;
+package CommonUtil.MongoDB;
 
+import CommonUtil.MongoDB.DataBaseUtil;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import org.bson.Document;
 
-import static PreProcess.DataPreProcess.DataBase.Create.CreateCollection;
-import static PreProcess.DataPreProcess.DataBase.DataBaseUtil.getColletcionNamesInDB;
+import static CommonUtil.MongoDB.Create.CreateCollection;
+import static CommonUtil.MongoDB.DataBaseUtil.getColletcionNamesInDB;
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
 
 public class Write {
+    public static String dataManageDbName = "DataManage";
     /**
      * 把Json字符传写入集合
      *
@@ -28,5 +31,16 @@ public class Write {
         mc = md.getCollection(collection);
         Document document = Document.parse(jsonData);
         mc.insertOne(document);
+    }
+    /**
+     * 把Json字符传写入数据管理集合
+     *
+     * @param json
+     * @param colName
+     */
+    public static void write2DataManage(String json, String colName) {
+        MongoCollection<Document> collection = getMongoCollection(dataManageDbName, colName);
+        Document document = Document.parse(json);
+        collection.insertOne(document);
     }
 }

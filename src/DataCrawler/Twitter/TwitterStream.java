@@ -5,7 +5,9 @@ import DataCrawler.model.TwitterParam;
 import org.bson.Document;
 import twitter4j.*;
 import DataCrawler.util.ConfigurationFactory;
-import DataCrawler.util.MongoDB;
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
+
+import static CommonUtil.MongoDB.Write.writeJson2Collection;
 
 import java.io.*;
 import java.text.SimpleDateFormat;
@@ -67,7 +69,7 @@ public class TwitterStream {
         }
         FileWriter fileWriter2 = new FileWriter(file2);
         BufferedWriter bufferedWriter2 = new BufferedWriter(fileWriter2);
-        MongoCollection<Document> collection = MongoDB.getMongoCollection("TwitterData", colname);
+        MongoCollection<Document> collection = getMongoCollection("TwitterData", colname);
 
         //twitter4j用法， 为流添加监听事件
         StatusListener listener = new StatusListener() {
@@ -107,7 +109,7 @@ public class TwitterStream {
 //                        }
                         return;
                     }
-                    MongoDB.writeJson2Collection(collection, str);
+                   writeJson2Collection(collection, str);
                     bufferedWriter.write(str);
                     //System.out.println("Write to outputFile/getTweets.txt " + count + " lines.");
                     System.out.println("Write to " + filePath_data +" "+ count + " lines.");

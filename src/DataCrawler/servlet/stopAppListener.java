@@ -1,7 +1,7 @@
 package DataCrawler.servlet;
 
 import DataCrawler.WebService.CrawlerService;
-import DataCrawler.util.MongoDB;
+import static CommonUtil.MongoDB.DataBaseUtil.MongoDBDisConnect;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -16,7 +16,7 @@ public class stopAppListener implements ServletContextListener{
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         System.out.println("================App STOP=================");
 
-        MongoDB.disconnectMongoDB();
+        MongoDBDisConnect();
 
         System.out.println("================MongoDB STOP=================");
 

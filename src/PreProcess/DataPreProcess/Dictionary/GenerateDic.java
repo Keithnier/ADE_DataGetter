@@ -19,8 +19,8 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
-import static PreProcess.DataPreProcess.DataBase.DataBaseUtil.getColletcionNamesInDB;
-import static PreProcess.DataPreProcess.DataBase.DataBaseUtil.getMongoCollection;
+import static CommonUtil.MongoDB.DataBaseUtil.getColletcionNamesInDB;
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
 
 public class GenerateDic {
     /**

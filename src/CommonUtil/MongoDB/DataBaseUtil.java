@@ -1,4 +1,4 @@
-package PreProcess.DataPreProcess.DataBase;
+package CommonUtil.MongoDB;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
@@ -77,7 +77,6 @@ public class DataBaseUtil {
         Collections.sort(collectionNames);
         return collectionNames;
     }
-
 
     /**
      * 结束连接，当关闭网页的时候执行该方法

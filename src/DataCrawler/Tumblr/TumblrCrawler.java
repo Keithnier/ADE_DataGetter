@@ -11,7 +11,7 @@ import twitter4j.JSONException;
 import twitter4j.JSONObject;
 import DataCrawler.util.ConfigurationFactory;
 import DataCrawler.util.FileSystem;
-import DataCrawler.util.MongoDB;
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
 
 import java.io.*;
 import java.text.ParseException;
@@ -96,7 +96,7 @@ public class TumblrCrawler implements Crawler{
         JSONArray tumblrs = jsonObject.getJSONArray("response");
 
         BufferedWriter bufferedWriter = null;
-        MongoCollection<Document> collection = MongoDB.getMongoCollection(this.dbName, colname);
+        MongoCollection<Document> collection = getMongoCollection(this.dbName, colname);
 
         int count = 0;
         int file_size = 0;

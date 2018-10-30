@@ -1,4 +1,4 @@
-<%@ page import="PreProcess.DataPreProcess.DataBase.DataBaseUtil" %>
+<%@ page import="CommonUtil.MongoDB.DataBaseUtil" %>
 <%--
   Created by IntelliJ IDEA.
   User: wml

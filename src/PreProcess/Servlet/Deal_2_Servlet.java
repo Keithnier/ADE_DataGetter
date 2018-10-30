@@ -17,7 +17,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static PreProcess.DataPreProcess.DataBase.Read.findEntry;
+import static CommonUtil.MongoDB.Read.findEntry;
 import static PreProcess.WebProcess.BySentence.ProcessSentence;
 
 //第二个按钮

@@ -3,7 +3,7 @@ package DataCrawler.WebService;
 import DataCrawler.model.Crawler;
 import twitter4j.JSONObject;
 import DataCrawler.util.FileSystem;
-import DataCrawler.util.MongoDB;
+import static CommonUtil.MongoDB.Write.*;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -105,7 +105,7 @@ public class CrawlerControler implements Runnable {
 
     public void saveStatusToDB(){
         JSONObject jsonObject = new JSONObject(getStatus());
-        MongoDB.write2DataManage(jsonObject.toString(), colname);
+        write2DataManage(jsonObject.toString(), colname);
 
     }
 

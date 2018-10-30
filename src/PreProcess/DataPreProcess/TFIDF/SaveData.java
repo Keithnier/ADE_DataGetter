@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static PreProcess.DataPreProcess.DataBase.Write.writeJson2Collection;
+import static CommonUtil.MongoDB.Write.writeJson2Collection;
 import static PreProcess.DataPreProcess.Util.PropertyUtil.getValueByKey;
 
 public class SaveData {

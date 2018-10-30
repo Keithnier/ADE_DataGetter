@@ -1,6 +1,6 @@
 package PreProcess.WebProcess;
 
-import PreProcess.DataPreProcess.DataBase.DataBaseUtil;
+import CommonUtil.MongoDB.DataBaseUtil;
 import PreProcess.DataPreProcess.Dictionary.LoadDictionary;
 import PreProcess.DataPreProcess.Segment.EnglishSegment;
 

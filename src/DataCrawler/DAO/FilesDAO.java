@@ -3,8 +3,9 @@ package DataCrawler.DAO;
 import DataCrawler.model.FilesModel;
 import twitter4j.JSONException;
 import twitter4j.JSONObject;
-import DataCrawler.util.MongoDB;
-
+import static CommonUtil.MongoDB.Read.getAllDataInManage;
+import static CommonUtil.MongoDB.Delete.deleteDataInCollection;
+import static CommonUtil.MongoDB.Read.dataManageDbName;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -22,7 +23,7 @@ public class FilesDAO {
      */
     public List<FilesModel> readFilesModel(){
 
-        Map<String, List<String>> results = MongoDB.getAllDataInManage();
+        Map<String, List<String>> results = getAllDataInManage();
 
         List<FilesModel> filesModels = new ArrayList<>();
 
@@ -55,6 +56,6 @@ public class FilesDAO {
     }
 
     public void deleteFile(String fileName, String crawler){
-        MongoDB.deleteDataInCollection(MongoDB.dataManageDbName, crawler + "_manage", "fileName", fileName);
+        deleteDataInCollection(dataManageDbName, crawler + "_manage", "fileName", fileName);
     }
 }

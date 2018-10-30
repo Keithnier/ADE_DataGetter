@@ -1,6 +1,6 @@
 package PreProcess.DataPreProcess.Index;
 
-import PreProcess.DataPreProcess.DataBase.DataBaseUtil;
+import CommonUtil.MongoDB.DataBaseUtil;
 import PreProcess.DataPreProcess.InfoExtra.TwitterExtract;
 import PreProcess.DataPreProcess.Model.BoundingBox;
 import PreProcess.DataPreProcess.Model.TwitterInfoModel;
@@ -29,7 +29,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-import static PreProcess.DataPreProcess.DataBase.Read.nextElem;
+import static CommonUtil.MongoDB.Read.nextElem;
 
 public class TwitterIndex implements Index<TwitterInfoModel> {
 

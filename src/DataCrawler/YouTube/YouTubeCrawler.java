@@ -14,8 +14,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 import org.bson.Document;
 import DataCrawler.util.FileSystem;
-import DataCrawler.util.MongoDB;
-
+import static CommonUtil.MongoDB.DataBaseUtil.getMongoCollection;
 import java.io.BufferedInputStream;
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
@@ -125,7 +124,7 @@ public class YouTubeCrawler implements Crawler{
                 List<Video> videoList = listResponse.getItems();
 
                 bufferedWriter = FileSystem.getBufferedWriterByPath(filePath_data);
-                collection = MongoDB.getMongoCollection(YouTubeCrawler.dbName, colname);
+                collection = getMongoCollection(YouTubeCrawler.dbName, colname);
 
                 int file_size = 0;
                 int dataCount = 0;

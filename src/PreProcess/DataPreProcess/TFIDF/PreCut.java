@@ -1,8 +1,8 @@
 package PreProcess.DataPreProcess.TFIDF;
 
 
-import PreProcess.DataPreProcess.DataBase.DataBaseUtil;
-import PreProcess.DataPreProcess.DataBase.Read;
+import CommonUtil.MongoDB.DataBaseUtil;
+import CommonUtil.MongoDB.Read;
 import PreProcess.DataPreProcess.InfoExtra.TwitterExtract;
 import PreProcess.DataPreProcess.Model.TwitterInfoModel;
 import PreProcess.DataPreProcess.Segment.Segment;

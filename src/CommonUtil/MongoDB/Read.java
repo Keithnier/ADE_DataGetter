@@ -1,4 +1,4 @@
-package PreProcess.DataPreProcess.DataBase;
+package CommonUtil.MongoDB;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -12,11 +12,12 @@ import org.bson.Document;
 
 import java.util.*;
 
-import static PreProcess.DataPreProcess.DataBase.DataBaseUtil.*;
+import static CommonUtil.MongoDB.DataBaseUtil.*;
 
 public class Read {
     private static MongoCursor<Document> mongoCursor;//迭代器锚点
     private static FindIterable<Document> findIterable;//数据表的迭代器
+    public static String dataManageDbName = "DataManage";//管理爬虫信息的数据库名称
 
     /**
      * 获取数据库下所有数据
@@ -47,6 +48,9 @@ public class Read {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
         return result;
+    }
+    public static Map<String, List<String>> getAllDataInManage() {
+        return getAllDataInDB(dataManageDbName);
     }
 
     /**

@@ -1,7 +1,7 @@
 package PreProcess.Servlet;
 
 
-import PreProcess.DataPreProcess.DataBase.DataBaseUtil;
+import CommonUtil.MongoDB.DataBaseUtil;
 import PreProcess.DataPreProcess.InfoExtra.TwitterExtract;
 import PreProcess.DataPreProcess.Segment.EnglishSegment;
 import PreProcess.DataPreProcess.Segment.Segment;
@@ -19,7 +19,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-import static PreProcess.DataPreProcess.DataBase.Read.getCountDataInCollection;
+import static CommonUtil.MongoDB.Read.getCountDataInCollection;
 import static PreProcess.WebProcess.BySentence.ProcessSentence;
 
 //第二个按钮
