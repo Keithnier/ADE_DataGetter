@@ -38,7 +38,7 @@ public class FigureTFIDF {
                 PropertyUtil.getValueByKey("dictionarypath")));//单词模板
 
         String cachePath = FileSystemUtil.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
 
         PrintStream ps;//生成TF-IDF并写入到文件中
         BufferedReader br;//获取切分后的词

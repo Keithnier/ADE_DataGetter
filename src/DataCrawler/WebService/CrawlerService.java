@@ -18,14 +18,14 @@ import java.util.concurrent.Executors;
  */
 public class CrawlerService {
     //flickr param file path
-    private static final String flickrParamFilePath = CrawlerService.class.getClassLoader().getResource("/paramfile/flickrparam.txt").getPath();
+    private static final String flickrParamFilePath = CrawlerService.class.getClassLoader().getResource("DataCrawler/paramfile/flickrparam.txt").getPath();
 
     //twitter rest param file path
-    private static final String twitterRestParamFilePath = CrawlerService.class.getClassLoader().getResource("/paramfile/twitterrestparam.txt").getPath();
+    private static final String twitterRestParamFilePath = CrawlerService.class.getClassLoader().getResource("DataCrawler/paramfile/twitterrestparam.txt").getPath();
 
-    private static final String tumblrParamFilePath = CrawlerService.class.getClassLoader().getResource("/paramfile/tumblrparam.txt").getPath();
+    private static final String tumblrParamFilePath = CrawlerService.class.getClassLoader().getResource("DataCrawler/paramfile/tumblrparam.txt").getPath();
 
-    private static final String youtubeParamFilePath = CrawlerService.class.getClassLoader().getResource("/paramfile/youtubeparam.txt").getPath();
+    private static final String youtubeParamFilePath = CrawlerService.class.getClassLoader().getResource("DataCrawler/paramfile/youtubeparam.txt").getPath();
 
     private static ExecutorService executorService = Executors.newFixedThreadPool(4);
 

@@ -51,8 +51,8 @@ public class TwitterStream {
         SimpleDateFormat df4db = new SimpleDateFormat("yyyyMMddHHmmss");
         String startTime = df.format(new Date());
         String colname = df4db.format(new Date());
-        String filePath_data = "outputfile/" + startTime + ".txt";
-        String filePath_test = "outputfile/" + "test_" + startTime + ".txt";
+        String filePath_data = "DataCrawler/outputfile/" + startTime + ".txt";
+        String filePath_test = "DataCrawler/outputfile/" + "test_" + startTime + ".txt";
         //准备文件1，用来保存内容
         File file = new File(filePath_data);
         if (!file.exists()) {

@@ -5,6 +5,6 @@ outputfile/
 .idea
 *.iml
 /paramfile/
-/src/paramfile/
-/src/outputfile/
+/src/DataCrawler/paramfile/
+/src/DataCrawler/outputfile/
 /web/WEB-INF/classes/

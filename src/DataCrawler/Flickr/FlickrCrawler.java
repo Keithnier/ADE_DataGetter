@@ -76,7 +76,7 @@ public class FlickrCrawler implements Crawler{
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
         //构造文件名和存储路径
         String colname = "flickr_" + startTime + "_data";
-        String filePath_data =  path + "outputfile/" + colname + ".txt";
+        String filePath_data =  path + "DataCrawler/outputfile/" + colname + ".txt";
 
 
         Map<String, Object> results = new HashMap<>();
@@ -130,7 +130,7 @@ public class FlickrCrawler implements Crawler{
                 //id.jpg
                 String pic_title = photo.getString("id") + "." + photo.getString("originalformat");
                 //在对应路径存储照片，会自动新建文件
-                FileOutputStream outputStream = new FileOutputStream(FileSystem.getFileByPath( path + "outputfile/" + pic_title));
+                FileOutputStream outputStream = new FileOutputStream(FileSystem.getFileByPath( path + "DataCrawler/outputfile/" + pic_title));
                 outputStream.write(photoBinary);
                 outputStream.close();
                 //仅存储照片信息

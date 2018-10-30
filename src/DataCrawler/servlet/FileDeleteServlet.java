@@ -25,7 +25,7 @@ public class FileDeleteServlet extends HttpServlet {
         String fileName = request.getParameter("fileName");
 
         String crawlerName = request.getParameter("crawlerName");
-        String filePath_data = TwitterCrawler.class.getClassLoader().getResource("/").getPath() + "outputfile/" + fileName + ".txt";
+        String filePath_data = TwitterCrawler.class.getClassLoader().getResource("/").getPath() + "DataCrawler/outputfile/" + fileName + ".txt";
 
 
         File file = FileSystem.getFileByPath(filePath_data);

@@ -59,7 +59,7 @@ public class YouTubeCrawler implements Crawler{
 //        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH：mm：ss");
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
         String colname = "youtube_" + startTime + "_data";
-        String filePath_data = path + "outputfile/" + colname + ".txt";
+        String filePath_data = path + "DataCrawler/outputfile/" + colname + ".txt";
 
 //        BufferedReader bufferedReader = null;
         BufferedWriter bufferedWriter = null;
@@ -148,7 +148,7 @@ public class YouTubeCrawler implements Crawler{
                         String pic_title = "youtube_" + video.getId() + "." + splits[splits.length - 1];
                         file_size += photoBinary.length;
 
-                        FileOutputStream outputStream = new FileOutputStream(FileSystem.getFileByPath(path + "outputfile/" + pic_title));
+                        FileOutputStream outputStream = new FileOutputStream(FileSystem.getFileByPath(path + "DataCrawler/outputfile/" + pic_title));
                         outputStream.write(photoBinary);
                         outputStream.close();
 

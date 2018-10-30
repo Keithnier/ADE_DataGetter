@@ -73,7 +73,7 @@ public class TwitterCrawler implements Crawler{
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 
         String colname = "twitter_" + startTime + "_data";
-        String filePath_data = path + "outputfile/" + colname + ".txt";
+        String filePath_data = path + "DataCrawler/outputfile/" + colname + ".txt";
 
         Response response = TwitterOAuth.getTwitterResponse(url, params);
 

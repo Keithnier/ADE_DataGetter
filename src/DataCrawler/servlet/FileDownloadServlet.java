@@ -21,7 +21,7 @@ public class FileDownloadServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String fileName = request.getParameter("fileName");
 
-        String filePath_data = FileDownloadServlet.class.getClassLoader().getResource("/").getPath() + "outputfile/" + fileName + ".txt";
+        String filePath_data = FileDownloadServlet.class.getClassLoader().getResource("/").getPath() + "DataCrawler/outputfile/" + fileName + ".txt";
 
         FileInputStream inputStream = new FileInputStream(FileSystem.getFileByPath(filePath_data));
 

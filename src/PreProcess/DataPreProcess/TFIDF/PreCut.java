@@ -68,7 +68,7 @@ public class PreCut {
         PrintStream ps_id;
         PrintStream ps_bounding;
         String cachePath = PreCut.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
         try{
             ps_seg = new PrintStream(new FileOutputStream(cachePath+"__preCutTwitterSeg__"));
             ps_local = new PrintStream(new FileOutputStream(cachePath+"__preCutTwitterLocal__"));
@@ -132,7 +132,7 @@ public class PreCut {
         PrintStream ps_id;
         PrintStream ps_bounding;
         String cachePath = PreCut.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
         try{
             ps_local = new PrintStream(new FileOutputStream(cachePath+"__preCutTwitterLocal__"));
             ps_seg = new PrintStream(new FileOutputStream(cachePath+"__preCutTwitterSeg__"));

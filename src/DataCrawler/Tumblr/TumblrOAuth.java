@@ -25,7 +25,7 @@ public class TumblrOAuth implements OAuth{
     public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
 
         //twitter rest param file path
-        final String paramFilePath = "paramfile/tumblrparam.txt";
+        final String paramFilePath = "DataCrawler/paramfile/tumblrparam.txt";
 
         initTumblrAccessToken(ConfigurationFactory.getRestParam(paramFilePath).get(0));
 

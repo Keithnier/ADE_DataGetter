@@ -36,7 +36,7 @@ public class TumblrCrawler implements Crawler{
     }
 
     public static void main(String[] args) throws InterruptedException, ExecutionException, IOException, JSONException, ParseException {
-        TumblrCrawler crawler = new TumblrCrawler(ConfigurationFactory.getRestParam("paramfile/tumblrparam.txt").get(0));
+        TumblrCrawler crawler = new TumblrCrawler(ConfigurationFactory.getRestParam("DataCrawler/paramfile/tumblrparam.txt").get(0));
         crawler.getTumblrByTag("gif", "19920404144444");
     }
 
@@ -63,7 +63,7 @@ public class TumblrCrawler implements Crawler{
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
 //        String startTime = df.format(new Date());
         String colname = "tumblr_" + startTime + "_data";
-        String filePath_data = path + "outputfile/" + colname + ".txt";
+        String filePath_data = path + "DataCrawler/outputfile/" + colname + ".txt";
 //        String filePath_test = TumblrCrawler.class.getClassLoader().getResource("/").getPath() + "outputfile/tumblr_" + "test_" + startTime + ".txt";
 
         HttpEntity entity = response.getEntity();
@@ -129,7 +129,7 @@ public class TumblrCrawler implements Crawler{
                     String[] splits = url_photo.split("\\.");
                     String pic_title = tumblr.getString("id") + "." + splits[splits.length - 1];
 
-                    FileOutputStream outputStream = new FileOutputStream(FileSystem.getFileByPath(path + "outputfile/" + pic_title));
+                    FileOutputStream outputStream = new FileOutputStream(FileSystem.getFileByPath(path + "DataCrawler/outputfile/" + pic_title));
                     outputStream.write(photoBinary);
                     outputStream.close();
 

@@ -26,7 +26,7 @@ public class FlickrOAuth implements OAuth{
 
     public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
         String URL = "https://api.flickr.com/services/rest";
-        initFlickrAccessToken(ConfigurationFactory.getRestParam("paramfile/flickrparam.txt").get(0));
+        initFlickrAccessToken(ConfigurationFactory.getRestParam("DataCrawler/paramfile/flickrparam.txt").get(0));
         Map<String, String> params = new HashMap<>();
         params.put("method", "flickr.photos.search");
         params.put("min_upload_date", "1510479048&");

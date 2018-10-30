@@ -111,7 +111,7 @@ public class CrawlerControler implements Runnable {
 
     public void saveStatusToFile(){
         Map<String, String> status = getStatus();
-        String filePath_test = CrawlerControler.class.getClassLoader().getResource("/").getPath() + "outputfile/" +  crawler.getCrawlerName() + "test_" + startTime + ".txt";
+        String filePath_test = CrawlerControler.class.getClassLoader().getResource("/").getPath() + "DataCrawler/outputfile/" +  crawler.getCrawlerName() + "test_" + startTime + ".txt";
         try {
             FileSystem.writeParamsToFile(filePath_test, status);
         } catch (IOException e) {

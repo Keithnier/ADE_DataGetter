@@ -33,7 +33,7 @@ public class FigureIDF {
                 PropertyUtil.getValueByKey("dictionarypath")));
         //打开已经切分好的文件
         String cachePath = FileSystemUtil.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
         BufferedReader br;
         PrintStream ps;
         try{
@@ -75,7 +75,7 @@ public class FigureIDF {
     public static Map<String,Double> makeIDFDic(){
         //缓冲路径
         String cachePath = FileSystemUtil.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
         BufferedReader br ;
         //字典-IDF值得MAP
         Map<String,Double> map = new HashMap<>();

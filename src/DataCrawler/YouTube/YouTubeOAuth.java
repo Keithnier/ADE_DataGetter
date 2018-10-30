@@ -85,7 +85,7 @@ public class YouTubeOAuth {
     public static Credential authorize(List<String> scopes, String credentialDatastore, String path) throws IOException {
 
         // Load client secrets.
-        Reader clientSecretReader = new InputStreamReader(new FileInputStream( path + "paramfile/client_secrets.json"));
+        Reader clientSecretReader = new InputStreamReader(new FileInputStream( path + "DataCrawler/paramfile/client_secrets.json"));
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JSON_FACTORY, clientSecretReader);
 
         // Checks that the defaults have been replaced (Default = "Enter X here").

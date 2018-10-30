@@ -64,7 +64,7 @@ public class SaveData {
         BufferedReader br_location;
         BufferedReader br_bounding;
         String cachePath = FileSystemUtil.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
 
         String WeightPath = getValueByKey("WeightBaseName");
         String TwitterColl = getValueByKey("TwitterWightCollection");
@@ -104,7 +104,7 @@ public class SaveData {
         BufferedReader br_bounding;
         BufferedReader br_location;
         String cachePath = FileSystemUtil.class.getClassLoader().
-                getResource("Cache/").getPath();
+                getResource("PreProcess/Cache/").getPath();
         String WeightPath = getValueByKey("TwitterWeightBaseName"); //新建数据库保存
         try{
             //获取各个输入流
