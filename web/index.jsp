@@ -37,9 +37,9 @@
     </script>
   </head>
   <body>
-  <div style="height: 6%;font-size: 18px;background: black;color:grey;">
-    <span style="margin-left: 110px;float: left;margin-top: 7px;">Cross-platform Search Engine</span>
-    <span style="margin-left: 30px;float: left;margin-top: 7px;">Contact Us</span>
+  <div style="height: 6%;font-size: 18px;background: black;">
+    <span style="margin-left: 110px;float: left;margin-top: 7px;color: white;font-family: 'Bodoni MT Poster Compressed'">Cross-platform Search Engine</span>
+    <span style="margin-left: 30px;float: left;margin-top: 7px;color: white;font-family: 'Bodoni MT Poster Compressed'">Contact Us</span>
   </div>
   <div id="myCarousel" class="carousel slide">
     <!-- 轮播（Carousel）指标 -->
@@ -53,28 +53,28 @@
     <!-- 轮播（Carousel）项目 -->
     <div class="carousel-inner">
       <div class="item active" id="p1">
-        <img src="image/home/bg1.jpg" style="height:94%;width: 100%;" alt="">
+        <img src="image/home/bg4.png" style="height:94%;width: 100%;" alt="">
         <div class="carousel-caption">
           <p style="margin-bottom: 23%;font-size: 70px;">Data Crawler</p>
           <span style="font-size: 25px;">Get what you want from Twitter,Youtube and so on</span>
         </div>
       </div>
       <div class="item" id="p2">
-        <img src="image/home/bg1.jpg" style="height:94%;width: 100%;" alt="">
+        <img src="image/home/bg4.png" style="height:94%;width: 100%;" alt="">
         <div class="carousel-caption">
           <p style="margin-bottom: 23%;font-size: 70px;">Data Preprocess</p>
           <span style="font-size: 25px;">Make the data normalized and easy to handle</span>
         </div>
       </div>
       <div class="item" id="p3">
-        <img src="image/home/bg1.jpg" style="height:94%;width: 100%;" alt="">
+        <img src="image/home/bg4.png" style="height:94%;width: 100%;" alt="">
         <div class="carousel-caption">
           <p style="margin-bottom: 23%;font-size: 70px;">Index Create</p>
           <span style="font-size: 25px;">To improve the data query rate</span>
         </div>
       </div>
       <div class="item" id="p4">
-        <img src="image/home/bg1.jpg" style="height:94%;width: 100%;" alt="">
+        <img src="image/home/bg4.png" style="height:94%;width: 100%;" alt="">
         <div class="carousel-caption">
           <p style="margin-bottom: 23%;font-size: 70px;">IRTree</p>
           <span style="font-size: 25px;">Build the IRTree</span>
