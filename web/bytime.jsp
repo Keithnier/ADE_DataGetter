@@ -6,6 +6,8 @@
     <link href="css/dataCrawl.css" rel="stylesheet" type="text/css"/>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.form.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/echarts-wordcloud.js"></script>
     <script type="text/javascript">
 
         var timer;
@@ -13,7 +15,7 @@
         var isPause = false;
         var minute = 0;
         var second = 0;
-
+        var finalResult;
         function isStop(){
             if(isGoing == false && isPause == false) {
                 return true;
@@ -73,6 +75,7 @@
             var Flickr = document.getElementById("Flickr").checked;
             var Tumblr = document.getElementById("Tumblr").checked;
             var YouTube = document.getElementById("YouTube").checked;
+
              timer = setInterval(function(){
                 $.ajax({
                     url:"/StatGetServlet",//要请求的服务器url
@@ -83,9 +86,11 @@
                     dataType:"text",   //服务器返回的数据是什么类型
                     success:function(result){  //这个方法会在服务器执行成功是被调用 ，参数result就是服务器返回的值(现在是json类型)
                         if(result){
-                            var obj = document.getElementById("data");
+                            /*var obj = document.getElementById("data");
                             obj.scrollTop = obj.scrollHeight; // good
-                            obj.innerHTML = result;
+                            obj.innerHTML = result;*/
+                           finalResult=result;//得到结果JSON数组赋值给全局变量
+
                         }
                     }
                 });
@@ -95,6 +100,7 @@
                      alert("Over！");
                      clearInterval(timer);
                      stop();
+                     getCloud();//调用函数生成词云
                  }
 
                  if (second==60){
@@ -164,6 +170,53 @@
                 return "Please stop the crawler before leave.";
             }
         }
+        function getCloud(){
+            var ResultJson = eval('(' + finalResult + ')');
+            var dataArr=[];
+
+            for(var i in ResultJson){
+                var textArr=ResultJson[i].text.split(" ");
+                for(var j = 0;j<textArr.length;j++){
+                    var data = {};
+                    data["name"]=textArr[j];
+                    data["value"]=4000;
+                    dataArr.push(data);
+                }
+            }
+            var chart = echarts.init(document.getElementById('wordcloud'));
+            var option = {
+                tooltip: {},
+                series: [ {
+                    type: 'wordCloud',
+                    gridSize: 2,
+                    sizeRange: [12, 50],
+                    rotationRange: [-90, 90],
+                    shape: 'pentagon',
+                    width: 600,
+                    height: 400,
+                    drawOutOfBound: true,
+                    textStyle: {
+                        normal: {
+                            color: function () {
+                                return 'rgb(' + [
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160),
+                                    Math.round(Math.random() * 160)
+                                ].join(',') + ')';
+                            }
+                        },
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowColor: '#333'
+                        }
+                    },
+                    data:dataArr
+                } ]
+            };
+            chart.setOption(option);
+            window.onresize = chart.resize;
+
+        }
     </script>
   </head>
   <body>
@@ -204,8 +257,8 @@
           <label><input id="pause" class="green_button" type="button" value="Pause" style="height:40px;width:80px;" onclick="pause();"/> </label>
           <label><input id="stop" class="green_button" type="button"  value="Stop" style="height:40px;width:80px;" onclick="stop();"/> </label>
         </div>
-      <div  class="content">
-        <textarea id="data" readonly></textarea>
+      <div  class="wordcloud" id="wordcloud" style="width:560px;height:370px;margin:0 auto;border:solid white">
+         <p style="font-size:55px;color: #9c9c9c;margin-left:25%;margin-top:25%">WordCloud</p>
       </div>
       <div class="content">
         <label id="timeCost">Time Cost：&nbsp;&nbsp;0:0</label>
