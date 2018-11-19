@@ -246,17 +246,12 @@ public class FlickrCrawler implements Crawler{
         } else {
             path = "";
         }
-        long max_time_upload = System.currentTimeMillis();
-        long min_time_upload = max_time_upload - 3600000;
+        long max_time_upload = System.currentTimeMillis()/1000;
+        long min_time_upload = max_time_upload/1000 - 3600;
         int photo_count = 1000;
 
         Map<String, String> params = prepareParamsForRegion(west_long, south_lat, east_long, north_lat, min_time_upload, max_time_upload, photo_count);
         return getFlickr(params, (String)others.get("startTime"), params.get("URL"));
-    }
-
-    @Override
-    public String getCrawlerName() {
-        return "Flickr";
     }
 
     @Override
@@ -266,11 +261,16 @@ public class FlickrCrawler implements Crawler{
         } else {
             path = "";
         }
-        long max_time_upload = System.currentTimeMillis();
-        long min_time_upload = max_time_upload - 600000;
+        long max_time_upload = System.currentTimeMillis() / 1000;
+        long min_time_upload = max_time_upload/1000 - 3600;
         int photo_count = 1000;
 
         Map<String, String> params = prepareParamsForKeyword(min_time_upload, max_time_upload, photo_count, keyword);
         return getFlickr(params, (String)others.get("startTime"), params.get("URL"));
+    }
+
+    @Override
+    public String getCrawlerName() {
+        return "Flickr";
     }
 }
