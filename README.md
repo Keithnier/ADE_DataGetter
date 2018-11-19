@@ -40,5 +40,6 @@ src
 **IRTree**为索引搜索引擎部分  
 **PreProcess**为预处理部分  
 
-如若项目无法运行，请先排除**文件缺失**的问题
-src/DataCrawler/paramfile中应有Oauth验证相关信息
+如若项目无法运行，请先排除**文件缺失**的问题  
+src/DataCrawler/paramfile中应有Oauth验证相关信息  
+另，请在war包classes文件夹下对应DataCrawler目录下添加outputfile文件夹，避免chen
