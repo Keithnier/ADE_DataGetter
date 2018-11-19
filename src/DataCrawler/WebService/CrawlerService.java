@@ -1,5 +1,6 @@
 package DataCrawler.WebService;
 
+import DataCrawler.Flickr.FlickrCrawler;
 import DataCrawler.Tumblr.TumblrCrawler;
 import DataCrawler.Twitter.TwitterCrawler;
 import DataCrawler.YouTube.YouTubeCrawler;
@@ -47,9 +48,9 @@ public class CrawlerService {
                     ConfigurationFactory.getRestParam(twitterRestParamFilePath).get(0)
                     , 200);
 
-           /* flickrCrawler = new FlickrCrawler(ConfigurationFactory.getRestParam(flickrParamFilePath).get(0));*/
+            flickrCrawler = new FlickrCrawler(ConfigurationFactory.getRestParam(flickrParamFilePath).get(0));
 
-            tumblrCrawler = new TumblrCrawler(ConfigurationFactory.getRestParam(tumblrParamFilePath).get(0));
+            //tumblrCrawler = new TumblrCrawler(ConfigurationFactory.getRestParam(tumblrParamFilePath).get(0));
 
             youtubeCrawler = new YouTubeCrawler(ConfigurationFactory.getYouTubeRestParam(youtubeParamFilePath),50);
 
@@ -59,8 +60,8 @@ public class CrawlerService {
         }
 
         crawlerMap.put("Twitter", new CrawlerControler(executorService, twitterCrawler, "Location", new HashMap<>()));
-       /* crawlerMap.put("Flickr", new CrawlerControler(executorService, flickrCrawler, "Location", new HashMap<>()));*/
-        crawlerMap.put("Tumblr", new CrawlerControler(executorService, tumblrCrawler, "Location", new HashMap<>()));
+        crawlerMap.put("Flickr", new CrawlerControler(executorService, flickrCrawler, "Location", new HashMap<>()));
+        //crawlerMap.put("Tumblr", new CrawlerControler(executorService, tumblrCrawler, "Location", new HashMap<>()));
         crawlerMap.put("Youtube", new CrawlerControler(executorService, youtubeCrawler, "Location", new HashMap<>()));
 
         System.out.println("Crawler Init success");
