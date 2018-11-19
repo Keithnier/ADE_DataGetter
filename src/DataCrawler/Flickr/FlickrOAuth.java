@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -26,7 +27,7 @@ public class FlickrOAuth implements OAuth{
 
     public static void main(String[] args) throws InterruptedException, ExecutionException, IOException {
         String URL = "https://api.flickr.com/services/rest";
-        initFlickrAccessToken(ConfigurationFactory.getRestParam("DataCrawler/paramfile/flickrparam.txt").get(0));
+        initFlickrAccessToken(ConfigurationFactory.getRestParam(FlickrOAuth.class.getClassLoader().getResource("DataCrawler/paramfile/flickrparam.txt").getPath()).get(0));
         Map<String, String> params = new HashMap<>();
         params.put("method", "flickr.photos.search");
         params.put("min_upload_date", "1510479048&");
@@ -76,7 +77,7 @@ public class FlickrOAuth implements OAuth{
         webClient.getOptions().setCssEnabled(false);
         webClient.getOptions().setJavaScriptEnabled(false);
         final HtmlPage htmlPage = webClient.getPage(token_url);//获取授权界面
-//        System.out.println(htmlPage.asXml());
+        System.out.println(htmlPage.asXml());
 
 
         final HtmlForm htmlForm = htmlPage.getForms().get(0);//找到页面中提交用户信息的form
@@ -86,6 +87,7 @@ public class FlickrOAuth implements OAuth{
         final HtmlPage htmlPage1 = submit.click();//提交信息，得到verify码所在界面
 
 
+        System.out.println(htmlPage1.asXml());
 
         final HtmlForm htmlForm1 = htmlPage1.getForms().get(0);
         final DomElement submit1 = htmlPage1.getElementById("login-signin");
@@ -95,17 +97,19 @@ public class FlickrOAuth implements OAuth{
 
 
         final HtmlPage htmlPage2 = submit1.click();
-        final HtmlForm htmlForm2 = htmlPage2.getForms().get(0);
-        /*System.out.println(htmlForm2.asXml());*/
-        final DomElement submit2 = htmlForm2.getLastElementChild().getFirstElementChild();
+        System.out.println(htmlPage2.asXml());
+
+         List<DomElement> elementList= htmlPage2.getElementById("Main").getByXPath(".//input[@class='Butt']");
+
+        final DomElement submit2 = elementList.get(0);
 
         final HtmlPage verifyPage = submit2.click();
-        /*String result = verifyPage.getElementById("Main").getLastElementChild().asText();*/
+        String result = verifyPage.getElementById("Main").getLastElementChild().asText();
         System.out.println(verifyPage.asXml());
 
 
 
-        String result="772-979-748";
+        //String result="772-979-748";
         return result;
     }
 
