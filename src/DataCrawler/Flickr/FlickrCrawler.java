@@ -1,8 +1,11 @@
 package DataCrawler.Flickr;
 
+import CommonUtil.MongoDB.DataBaseUtil;
 import com.github.scribejava.core.model.Response;
 import DataCrawler.model.Crawler;
 import DataCrawler.model.RestParam;
+import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 import twitter4j.JSONArray;
 import twitter4j.JSONException;
 import twitter4j.JSONObject;
@@ -101,7 +104,7 @@ public class FlickrCrawler implements Crawler{
         JSONArray photos = photosInfo.getJSONArray("photo");
 
         BufferedWriter bufferedWriter = null;
-//        MongoCollection<Document> collection = MongoDB.getMongoCollection(this.dbName, colname);//mongoDB
+        MongoCollection<Document> collection = DataBaseUtil.getMongoCollection(this.dbName, colname);//mongoDB
 
         int count = 0;
         int file_size = 0;
@@ -137,9 +140,9 @@ public class FlickrCrawler implements Crawler{
                 bufferedWriter.write(photo.toString());
                 bufferedWriter.newLine();
 
-//                Document document = Document.parse(photo.toString());//mongoDB
-//                document.put("imgURL", url);//mongoDB
-//                collection.insertOne(document);//mongoDB
+                Document document = Document.parse(photo.toString());//mongoDB
+                document.put("imgURL", url);//mongoDB
+                collection.insertOne(document);//mongoDB
                 //照片数目加一，file_size存储的是照片本身的大小
                 count++;
                 file_size += photoBinary.length;
