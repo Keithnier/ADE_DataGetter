@@ -19,56 +19,26 @@ web相关文件在**web**文件夹下
 
 主目录结构如下
 ``` shell
-└── DataGetter  
-    ├── SaveData  
-    ├── out  
-    ├──**outputfile**  
-    ├── **paramfile**  
-    ├── src  
-    └── web  
+ADE_DataGetter
+├── SaveData
+├── src
+└── web  
 ```
 
 
 src目录结构如下
 
 ``` shell
-src  
-├── DAO  
-├── DataPreProcess  
-│   ├── DataBase  
-│   ├── DataRes  
-│   │   └── Twitter  
-│   ├── Dictionary  
-│   ├── Index  
-│   ├── InfoExtra  
-│   ├── InfoFilter  
-│   ├── Model   
-│   ├── Segment  
-│   ├── TFIDF  
-│   └── Util  
-├── Flickr  
-├── Tumblr  
-├── Twitter  
-├── WebProcess  
-├── WebService  
-├── YouTube  
-├── invertedindex  
-├── model  
-├── neustore  
-│   ├── base  
-│   └── heapfile  
-├── **outputfile**  
-├── **paramfile**  
-├── query  
-├── regressiontest  
-├── servlet  
-├── spatialindex  
-│   ├── rtree  
-│   ├── spatialindex  
-│   └── storagemanager  
-├── test  
-└── util  
+src
+├── CommonUtil
+├── DataCrawler
+├── IRTree
+└── PreProcess
 ```
 
+**DataCrawler**对应爬虫部分  
+**IRTree**为索引搜索引擎部分  
+**PreProcess**为预处理部分  
 
 如若项目无法运行，请先排除**文件缺失**的问题
+src/DataCrawler/paramfile中应有Oauth验证相关信息
